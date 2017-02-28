@@ -1,0 +1,57 @@
+<!-- HangMan Game -->
+
+<!DOCTYPE html>
+<html>
+   <head>
+       <title>Hangman!</title>
+       <link rel="stylesheet" type="text/css" href="style.css">
+       <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+       <script type="text/javascript" src='http://code.jquery.com/jquery-1.10.2.min.js'></script>
+       <script type="text/javascript">
+       //here we go!
+       //1. generate random Word
+       //2. reset turn counter to zero
+       //3. collect input from user
+       //4. compare input against target word
+      //  var n = OurWord.indexOf(UserGuess);
+
+       //5. remove guessed letter
+       //6. decrement counter with every guess
+       //7.
+
+
+       $(document).ready(function(){
+         console.log('괜찮아!');//It's ok!
+          // $.get((:http://www.setgetgo.com/randomword/get.php))
+          //
+          // function(hangman){ //pizzanddonuts
+          //   hangman.Word
+          // }
+            // console.log(hangman.Word)
+          //   });
+          //
+
+
+          var word = $.ajax({
+            type: "GET",
+            url:"http://www.setgetgo.com/randomword/get.php",
+            dataType: "jsonp",
+            jsonpCallback: function(results){
+              console.log(results.Word)
+            }
+          });
+            console.log(word.responseJSON)
+          });
+      </script>
+
+   </head>
+   <body>
+      <h1>Hangman.</h1>
+      <div id='large_box'>
+          <div class='side_box'></div>
+          <div class='middle_box'></div>
+          <div class='side_box'></div>
+      </div>
+
+   </body>
+</html>
